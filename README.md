@@ -4,10 +4,35 @@ uHTTP Server es un servidor web simple basado en Flask que permite subir archivo
 
 ## Instalación
 
+## Crea un entorno virutal
+1. python3 -m venv myenv
+2. source myenv/bin/activate
+
+Una vez con el entorno virtual proceder con:
+
+
 Puedes instalar uHTTP Server directamente desde GitHub usando pip:
 
 ```bash
 pip install git+https://github.com/CharlyPierce/uhttp.server.git
+```
+
+Forzar sin entorno virtual
+```bash
+pip install --break-system-packages git+https://github.com/CharlyPierce/uhttp.server.git
+```
+
+Agregando al path:
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+```
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+```
+
+Recargando bash
+```bash
+source ~/.bashrc
 ```
 ## Uso
 
@@ -39,4 +64,9 @@ O en la carpeta **uploads** creada donde se ejecuto uhttp-server 5033
 ## uninstall
 ```bash
 pip uninstall uhttp
+```
+
+Forzado
+```bash
+pip uninstall --break-system-packages uhttp
 ```
