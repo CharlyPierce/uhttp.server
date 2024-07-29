@@ -16,7 +16,7 @@ uhttp-server [puerto]
 
 Por ejemplo:
 ```bash
-uhttp-server 8080
+uhttp-server 5033
 ```
 
 Si no se especifica un puerto, se utilizará el puerto 5033 por defecto.
@@ -31,7 +31,8 @@ Si no se especifica un puerto, se utilizará el puerto 5033 por defecto.
 ## Acceder a los archivos subidos
 
 Los archivos subidos estarán disponibles en `http://localhost:[puerto]/uploads/nombre_del_archivo`.
-o en la carpeta uploads creada donde se ejecuto uhttp-server 8080
+
+O en la carpeta 'uploads' creada donde se ejecuto uhttp-server 8080
 
 ## uninstall
 ```bash
