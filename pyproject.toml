@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uhttp"
+version = "0.1"
+description = "Un servidor HTTP simple basado en Flask"
+authors = [{name = "charly", email = "cvazquezv1700@alumno.ipn.mx"}]
+dependencies = [
+    "Flask",
+]
+
+[tool.setuptools]
+packages = ["uhttp"]
+
+[project.scripts]
+uhttp-server = "uhttp.server:run"
