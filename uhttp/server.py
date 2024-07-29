@@ -3,7 +3,8 @@ from flask import Flask, request, redirect, url_for, send_from_directory, render
 import os
 import sys
 
-app = Flask(__name__)  # Crea una instancia de la aplicación Flask
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), 'templates'))
+
 
 UPLOAD_FOLDER = 'uploads'  # Define la carpeta donde se guardarán los archivos subidos
 
