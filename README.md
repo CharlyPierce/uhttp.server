@@ -28,11 +28,13 @@ Si no se especifica un puerto, se utilizará el puerto 5033 por defecto.
 3. Selecciona uno o más archivos y haz clic en "Subir".
 4. Los archivos se guardarán en la carpeta `uploads` del servidor.
 
+Esta carpeta se crea donde se ejecuta uhttp-server 5033
+
 ## Acceder a los archivos subidos
 
 Los archivos subidos estarán disponibles en `http://localhost:[puerto]/uploads/nombre_del_archivo`.
 
-O en la carpeta 'uploads' creada donde se ejecuto uhttp-server 8080
+O en la carpeta **uploads** creada donde se ejecuto uhttp-server 5033
 
 ## uninstall
 ```bash
