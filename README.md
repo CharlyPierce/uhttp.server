@@ -1,6 +1,6 @@
 # uHTTP Server  (upload HTTP Server)
 
-uHTTP Server es un servidor web simple basado en Flask que permite subir archivos y servirlos.
+uHTTP Server es un servidor web simple basado en Flask que permite subir archivos.
 
 ## Instalación
 
@@ -57,9 +57,9 @@ Esta carpeta se crea donde se ejecuta uhttp-server 5033
 
 ## Acceder a los archivos subidos
 
-Los archivos subidos estarán disponibles en `http://localhost:[puerto]/uploads/nombre_del_archivo`.
+Los archivos subidos estarán disponibles en la carpeta **uploads** 
 
-O en la carpeta **uploads** creada donde se ejecuto uhttp-server 5033
+Creada donde se ejecuto uhttp-server 5033
 
 ## uninstall
 ```bash

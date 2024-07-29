@@ -38,10 +38,10 @@ def index():
     # Renderiza la página principal si el método es GET
     return render_template('index.html')
 
-@app.route('/uploads/<filename>')
-def uploaded_file(filename):
-    # Envía el archivo solicitado desde la carpeta de subidas
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+# @app.route('/uploads/<filename>')
+# def uploaded_file(filename):
+#     # Envía el archivo solicitado desde la carpeta de subidas
+#     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 def run():
     # Permite especificar el puerto desde la línea de comandos
