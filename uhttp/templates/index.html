@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <title>File Upload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .progress {
+            width: 100%;
+            background-color: #f3f3f3;
+            border: 1px solid #ccc;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 20px;
+            background-color: #4caf50;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload new Files</h1>
+    <form id="upload-form" enctype="multipart/form-data">  <!-- Formulario para subir archivos -->
+        <input type="file" id="file-input" name="file" multiple>  <!-- Campo para seleccionar múltiples archivos a subir -->
+        <input type="submit" value="Upload">  <!-- Botón para enviar los archivos -->
+    </form>
+    <div class="progress">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div id="upload-results">
+        <!-- Resultados de la subida de archivos se mostrarán aquí -->
+    </div>
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Previene el envío normal del formulario
+
+            var form = event.target;
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('POST', '/', true);
+
+            xhr.upload.addEventListener('progress', function(event) {
+                if (event.lengthComputable) {
+                    var percentComplete = (event.loaded / event.total) * 100;
+                    document.getElementById('progress-bar').style.width = percentComplete + '%';
+                }
+            });
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var resultsDiv = document.getElementById('upload-results');
+                    resultsDiv.innerHTML = '';
+                    response.uploaded_files.forEach(function(file) {
+                        var p = document.createElement('p');
+                        p.textContent = file.filename + ' - ';
+                        var statusSpan = document.createElement('span');
+                        if (file.success) {
+                            statusSpan.textContent = '✔';
+                            statusSpan.classList.add('success');
+                        } else {
+                            statusSpan.textContent = '✘';
+                            statusSpan.classList.add('error');
+                        }
+                        p.appendChild(statusSpan);
+                        resultsDiv.appendChild(p);
+                    });
+                } else {
+                    console.error('Error uploading files.');
+                }
+                document.getElementById('progress-bar').style.width = '0%';  // Reinicia la barra de progreso
+            };
+
+            xhr.send(formData);
+        });
+    </script>
+</body>
+</html>
