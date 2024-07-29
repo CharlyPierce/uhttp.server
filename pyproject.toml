@@ -14,5 +14,9 @@ dependencies = [
 [tool.setuptools]
 packages = ["uhttp"]
 
+[tool.setuptools.package-data]
+uhttp = ["templates/*.html"]
+
 [project.scripts]
 uhttp-server = "uhttp.server:run"
+
