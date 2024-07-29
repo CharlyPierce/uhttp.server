@@ -6,16 +6,18 @@ uHTTP Server es un servidor web simple basado en Flask que permite subir archivo
 
 Puedes instalar uHTTP Server directamente desde GitHub usando pip:
 
+```bash
 pip install git+https://github.com/CharlyPierce/uhttp.server.git
-
+```
 ## Uso
 
 Una vez instalado, puedes iniciar el servidor con el siguiente comando:
 uhttp-server [puerto]
 
 Por ejemplo:
+```bash
 uhttp-server 8080
-
+```
 
 Si no se especifica un puerto, se utilizará el puerto 5033 por defecto.
 
@@ -29,4 +31,9 @@ Si no se especifica un puerto, se utilizará el puerto 5033 por defecto.
 ## Acceder a los archivos subidos
 
 Los archivos subidos estarán disponibles en `http://localhost:[puerto]/uploads/nombre_del_archivo`.
+o en la carpeta uploads creada donde se ejecuto uhttp-server 8080
 
+## uninstall
+```bash
+pip uninstall uhttp
+```
